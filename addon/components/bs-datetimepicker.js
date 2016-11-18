@@ -87,7 +87,7 @@ export default Component.extend({
     });
 
     this.addObserver('locale', function() {
-      this.$().data('DateTimePicker').minDate(this.get('locale'));
+      this.$().data('DateTimePicker').locale(this.get('locale'));
     });
   },
 
