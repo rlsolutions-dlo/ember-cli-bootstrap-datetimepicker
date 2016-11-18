@@ -85,6 +85,10 @@ export default Component.extend({
     this.addObserver('minDate', function() {
       this.$().data('DateTimePicker').minDate(this.get('minDate'));
     });
+
+    this.addObserver('locale', function() {
+      this.$().data('DateTimePicker').minDate(this.get('locale'));
+    });
   },
 
   willDestroyElement() {
@@ -92,6 +96,7 @@ export default Component.extend({
     this.removeObserver('date');
     this.removeObserver('maxDate');
     this.removeObserver('minDate');
+    this.removeObserver('locale');
 
     // Running the `ember` application embedded might cause the DOM to be cleaned before
     let dateTimePicker = this.$().data('DateTimePicker');
