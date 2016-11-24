@@ -1,4 +1,8 @@
+{{#if inline}}
+  
+{{else}}
 <input type="text" class="form-control" placeholder={{placeholder}} onfocus={{action 'focus'}}>
 <span class="input-group-addon">
   <i class={{iconClasses}}></i>
 </span>
+{{/if}}
