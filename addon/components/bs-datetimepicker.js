@@ -70,6 +70,8 @@ export default Component.extend({
 
       this.set('date', newDate);
       this.sendAction('change', newDate);
+    }).on('dp.update',e=>{
+      this.sendAction('update', e);
     });
 
     this.addObserver('date', function() {
