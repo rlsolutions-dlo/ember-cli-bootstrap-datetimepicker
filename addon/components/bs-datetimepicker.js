@@ -73,6 +73,8 @@ export default Component.extend({
       this.sendAction('change', newDate);
     }).on('dp.update',e=>{
       this.sendAction('update', e);
+    }).on('dp.show', e=>{
+    	debugger;
     });
 
     this.addObserver('date', function() {
