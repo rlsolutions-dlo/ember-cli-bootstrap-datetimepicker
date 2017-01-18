@@ -322,6 +322,18 @@ Accepts: `object` with one or all of the parameters above
 Will position widget according to the parameters given in object.
 
 
+#### widgetParent
+
+Default: `null`
+
+Accepts: `string or jQuery object`
+
+```handlebars
+{{bs-datetimepicker date=myDate widgetParent='.tempDiv'}}
+```
+
+
+
 
 ## License
 
