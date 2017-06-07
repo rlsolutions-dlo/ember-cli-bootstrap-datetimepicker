@@ -332,6 +332,15 @@ Accepts: `string or jQuery object`
 {{bs-datetimepicker date=myDate widgetParent='.tempDiv'}}
 ```
 
+#### keepInvalid
+
+Default: `false`
+
+Accepts: `boolean`
+
+```handlebars
+{{bs-datetimepicker date=myDate keepInvalid=true}}
+```
 
 
 

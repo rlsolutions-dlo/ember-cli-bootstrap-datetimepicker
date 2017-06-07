@@ -64,6 +64,7 @@ export default Component.extend({
       viewMode: this.getWithDefault('viewMode', defaults.viewMode),
       widgetPositioning: this.getWithDefault('widgetPositioning', defaults.widgetPositioning),
       widgetParent: this.getWithDefault('widgetParent', defaults.widgetParent),      
+      keepInvalid: this.getWithDefault('keepInvalid', defaults.keepInvalid),
       inline: this.getWithDefault('inline', defaults.inline)
     }).on('dp.change', e => {
       // Convert moment to js date or default to null
