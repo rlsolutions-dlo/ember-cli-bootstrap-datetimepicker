@@ -45,6 +45,7 @@ export default Component.extend({
     this.$().datetimepicker({
       date: this.getWithDefault('date', defaults.defaultDate),
       daysOfWeekDisabled: this.getWithDefault('daysOfWeekDisabled', defaults.daysOfWeekDisabled),
+      debug: this.getWithDefault('debug', defaults.debug),
       disabledDates: this.getWithDefault('disabledDates', defaults.disabledDates),
       disabledHours: this.getWithDefault('disabledHours', defaults.disabledHours),
       enabledDates: this.getWithDefault('enabledDates', defaults.enabledDates),
@@ -52,6 +53,8 @@ export default Component.extend({
       focusOnShow: this.getWithDefault('focusOnShow', defaults.focusOnShow),
       format: this.getWithDefault('format', defaults.format),
       icons,
+      keepInvalid: this.getWithDefault('keepInvalid', defaults.keepInvalid),
+      keepOpen: this.getWithDefault('keepOpen', defaults.keepOpen),
       locale: this.getWithDefault('locale', defaults.locale),
       maxDate: this.getWithDefault('maxDate', defaults.maxDate),
       minDate: this.getWithDefault('minDate', defaults.minDate),
@@ -64,8 +67,6 @@ export default Component.extend({
       viewMode: this.getWithDefault('viewMode', defaults.viewMode),
       widgetPositioning: this.getWithDefault('widgetPositioning', defaults.widgetPositioning),
       widgetParent: this.getWithDefault('widgetParent', defaults.widgetParent),      
-      keepInvalid: this.getWithDefault('keepInvalid', defaults.keepInvalid),
-      keepOpen: this.getWithDefault('keepOpen', defaults.keepOpen),
       inline: this.getWithDefault('inline', defaults.inline)
     }).on('dp.change', e => {
       // Convert moment to js date or default to null
