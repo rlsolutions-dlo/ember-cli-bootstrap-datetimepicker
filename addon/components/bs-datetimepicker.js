@@ -19,6 +19,8 @@ export default Component.extend({
 
   openOnFocus: false,
 
+  isMobile: /Android|iPhone|iPod|Windows Phone/i.test(navigator.userAgent),
+
   iconClasses: computed('isTime', function() {
     if (this.get('isTime')) {
       return this.getWithDefault('config.icons.time', defaults.icons.time);
@@ -43,7 +45,7 @@ export default Component.extend({
     };
 
     this.$().datetimepicker({
-      date: this.getWithDefault('date', defaults.defaultDate),
+      date: this.getWithDefault('date', null),
       daysOfWeekDisabled: this.getWithDefault('daysOfWeekDisabled', defaults.daysOfWeekDisabled),
       debug: this.getWithDefault('debug', defaults.debug),
       disabledDates: this.getWithDefault('disabledDates', defaults.disabledDates),
@@ -55,6 +57,7 @@ export default Component.extend({
       icons,
       keepInvalid: this.getWithDefault('keepInvalid', defaults.keepInvalid),
       keepOpen: this.getWithDefault('keepOpen', defaults.keepOpen),
+      ignoreReadonly: this.isMobile || defaults.ignoreReadonly,
       locale: this.getWithDefault('locale', defaults.locale),
       maxDate: this.getWithDefault('maxDate', defaults.maxDate),
       minDate: this.getWithDefault('minDate', defaults.minDate),
@@ -91,6 +94,10 @@ export default Component.extend({
     this.addObserver('minDate', function() {
       this.$().data('DateTimePicker').minDate(this.get('minDate'));
     });
+
+    this.addObserver('locale', function() {
+      this.$().data('DateTimePicker').locale(this.get('locale'));
+    });
   },
 
   willDestroyElement() {
@@ -98,6 +105,7 @@ export default Component.extend({
     this.removeObserver('date');
     this.removeObserver('maxDate');
     this.removeObserver('minDate');
+    this.removeObserver('locale');
 
     // Running the `ember` application embedded might cause the DOM to be cleaned before
     let dateTimePicker = this.$().data('DateTimePicker');

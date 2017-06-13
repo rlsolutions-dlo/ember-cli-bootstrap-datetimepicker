@@ -5,8 +5,9 @@ It uses [bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetim
 
 
 ## Requirements
+* Node.js 6 or newer
 * Bootstrap 3
-* Ember >= 1.13.0
+* Ember >= 2
 * Ember CLI
 
 
@@ -44,7 +45,7 @@ Fired when the date is changed.
 
 #### date
 
-Default: `false`
+Default: `null`
 
 Accepts: `date`, `moment`, `string`
 
